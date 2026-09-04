@@ -9,18 +9,18 @@ export const useMaskSettings = () => {
       initialMaskPos: "50% -1500vh",
       initialMaskSize: "3100% 3100%",
       maskPos: "50% 7vh",
-      maskSize: "50% 50%",
+      maskSize: "40% 40%",
     };
   }
 
-  if (isTablet) {
-    return {
-      initialMaskPos: "50% -1700vh",
-      initialMaskSize: "3500% 3500%",
-      maskPos: "50% 17vh",
-      maskSize: "30% 30%",
-    };
-  }
+else if (isTablet) {
+  return {
+    initialMaskPos: "50% 20vh",
+    initialMaskSize: "3500% 3500%",
+    maskPos: "50% 20vh",
+    maskSize: "26% 26%",
+  };
+}
 
   return {
     initialMaskPos: "50% 22%",

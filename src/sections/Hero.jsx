@@ -21,7 +21,7 @@ export default function Hero() {
       scrollTrigger: {
         trigger: ".hero-section",
         start: "top top",
-        scrub: 2.5, 
+        scrub: 1, 
         end: "+=200%",
         pin: true,
       },
@@ -29,12 +29,15 @@ export default function Hero() {
 
     tl.to(".fade-out", { opacity: 0, ease: "power1.inOut" })
     .to(".scale-out", {scale: 1,ease: "power1.inOut",})
-    .to(".mask-wrapper", {maskSize}, '<')
-    .to('.mask-wrapper', {opacity: 0})
+    .to(".mask-wrapper", {maskSize, maskPosition: maskPos}, '<')
+    .to('.mask-wrapper', {opacity: 0}, "<")
     .to('.overlay-logo', {opacity: 1, onComplete:()=>{
-        gsap.to('.overlay-logo', {opacity: 0} )
+    gsap.to('.overlay-logo', {opacity: 0} )
     } }, '<')
     .to('.entrance-message', {duration: 1, ease: 'power1.inOut', maskImage:"radial-gradient(circle at 50% 0vh, black 50%, transparent 100%)"}, "<")
+  }, {
+    dependencies: [initialMaskPos, initialMaskSize, maskPos, maskSize],
+    revertOnUpdate: true,
   });
   return (
     <section className="hero-section">
