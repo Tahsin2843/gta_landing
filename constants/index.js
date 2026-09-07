@@ -6,7 +6,7 @@ export const useMaskSettings = () => {
 
   if (isMobile) {
     return {
-      initialMaskPos: "50% -1500vh",
+      initialMaskPos: "50% -1520vh",
       initialMaskSize: "3100% 3100%",
       maskPos: "50% 7vh",
       maskSize: "40% 40%",
