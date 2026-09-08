@@ -9,6 +9,10 @@ gsap.registerPlugin(ScrollTrigger)
  export default function SecondVideo(){
  let videoRef = useRef(null)
 
+ useGSAP(()=>{
+    
+ })
+
 useGSAP(()=>{
     gsap.set('.lucia', {marginTop: '-60vh', opacity: 0})
 
