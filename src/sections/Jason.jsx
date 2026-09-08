@@ -2,39 +2,38 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 export default function Jason() {
-    useGSAP(()=>{
-        gsap.set('.jason', {marginTop: '-80vh'})
+  useGSAP(() => {
+    gsap.set(".jason", { marginTop: "-80vh" });
 
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".jason",
+          start: "top 90%",
+          end: "10% center",
+          scrub: true,
+        },
+      })
+      .to(".first-vd", { opacity: 0, ease: "power1.inOut" });
 
-        gsap.timeline({
-            scrollTrigger:{
-                trigger: '.jason', 
-                start: 'top 90%', 
-                end: '10% center', 
-                scrub: true
-            }
-        })
-        .to('.first-vd', {opacity: 0, ease: 'power1.inOut'})
-
-        gsap.to('.jason .img-box', {
-            scrollTrigger:{
-                trigger: '.jason', 
-                start: 'top center', 
-                end: "80% center", 
-                scrub: 20, 
-            }, y: -300, duration: 1, ease: "power1.inOut" 
-        }, "<")
-    })
-
-
-
-
-
-
-
-
+    gsap.to(
+      ".jason .img-box",
+      {
+        scrollTrigger: {
+          trigger: ".jason",
+          start: "top center",
+          end: "80% center",
+          scrub: 20,
+        },
+        y: -300,
+        duration: 1,
+        ease: "power1.inOut",
+      },
+      "<",
+    );
+  });
 
   return (
     <section className="jason">
@@ -58,7 +57,7 @@ export default function Jason() {
           <img src="/images/jason-1.webp" alt="" />
         </div>
 
-        <div className="jason-1">
+        <div className="jason-3">
           <img src="/images/jason-3.webp" alt="" />
         </div>
       </div>
